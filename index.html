@@ -95,13 +95,14 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">建议创建一个新用户来用于远程连接，避免直接使用root</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">&#x27;%&#x27;</span>表示允许来自所有位置的连接</span></span><br><span class="line">create user &#x27;username&#x27;@&#x27;%&#x27; identified by &#x27;password.&#x27;;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置该用户可操作的数据库或特定的表</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">&#x27;*&#x27;</span>表示授权所有库或表</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">其中权限除了 ALL 外也可以独立设置</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">             |- SELECT</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">             |- UPDATE</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">             |- INSERT</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">             |- DELETE</span></span><br><span class="line">GRANT ALL ON *.* TO &#x27;username&#x27;@&#x27;%&#x27;;</span><br></pre></td></tr></table></figure>
+        <p>mysql配置远程连接并设置具体操作权限</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">建议创建一个新用户来用于远程连接，避免直接使用root</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">&#x27;%&#x27;</span>表示允许来自所有位置的连接</span></span><br><span class="line">create user &#x27;username&#x27;@&#x27;%&#x27; identified by &#x27;password.&#x27;;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置该用户可操作的数据库或特定的表</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">&#x27;*&#x27;</span>表示授权所有库或表</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">其中权限除了 ALL 外也可以独立设置</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">             |- SELECT</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">             |- UPDATE</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">             |- INSERT</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">             |- DELETE</span></span><br><span class="line">GRANT ALL ON *.* TO &#x27;username&#x27;@&#x27;%&#x27;;</span><br></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhangao204.github.io/2023/01/05/MySQL%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" data-id="clcifj49z0003zcjf6mla4sqc" data-title="MySQL配置远程连接" class="article-share-link">分享</a>
+      <a data-url="https://zhangao204.github.io/2023/01/05/MySQL%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" data-id="clcifpe4e0004tcjf5dvp4gy2" data-title="MySQL配置远程连接" class="article-share-link">分享</a>
       
       
       
@@ -147,7 +148,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhangao204.github.io/2022/10/10/MySQL%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-Ubuntu20-04/" data-id="clcifj4a00004zcjf2u4l300f" data-title="MySQL，Node.js安装与配置(Ubuntu20.04)" class="article-share-link">分享</a>
+      <a data-url="https://zhangao204.github.io/2022/10/10/MySQL%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-Ubuntu20-04/" data-id="clcifpe4d0003tcjf59k5d4ub" data-title="MySQL，Node.js安装与配置(Ubuntu20.04)" class="article-share-link">分享</a>
       
       
       
@@ -180,7 +181,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhangao204.github.io/2022/10/09/%E5%B0%8F%E9%95%87%E5%BE%80%E4%BA%8B/" data-id="clcifj4a30009zcjf4cos7fa3" data-title="" class="article-share-link">分享</a>
+      <a data-url="https://zhangao204.github.io/2022/10/09/%E5%B0%8F%E9%95%87%E5%BE%80%E4%BA%8B/" data-id="clcifpe4g0009tcjfcb9meifl" data-title="" class="article-share-link">分享</a>
       
       
       
@@ -283,7 +284,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhangao204.github.io/2022/10/05/HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E9%80%9F%E6%9F%A5/" data-id="clcifj49v0001zcjf5i7ied02" data-title="HTTP状态码速查" class="article-share-link">分享</a>
+      <a data-url="https://zhangao204.github.io/2022/10/05/HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E9%80%9F%E6%9F%A5/" data-id="clcifpe4a0001tcjf5qbn2jrj" data-title="HTTP状态码速查" class="article-share-link">分享</a>
       
       
       
@@ -324,7 +325,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhangao204.github.io/2022/09/25/Node-js%E5%8A%A8%E6%80%81SQL/" data-id="clcifj4a10005zcjfafroel5w" data-title="Node.js动态SQL" class="article-share-link">分享</a>
+      <a data-url="https://zhangao204.github.io/2022/09/25/Node-js%E5%8A%A8%E6%80%81SQL/" data-id="clcifpe4f0005tcjf2zmk2w13" data-title="Node.js动态SQL" class="article-share-link">分享</a>
       
       
       
@@ -390,7 +391,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhangao204.github.io/2022/09/01/Git%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" data-id="clcifj49r0000zcjfev5z9orr" data-title="Git常用指令" class="article-share-link">分享</a>
+      <a data-url="https://zhangao204.github.io/2022/09/01/Git%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" data-id="clcifpe450000tcjf0qzqg8a0" data-title="Git常用指令" class="article-share-link">分享</a>
       
       
       
@@ -436,7 +437,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhangao204.github.io/2022/08/28/Obsidian%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5/" data-id="clcifj4a20008zcjf7cs5e9ha" data-title="Obsidian多端同步" class="article-share-link">分享</a>
+      <a data-url="https://zhangao204.github.io/2022/08/28/Obsidian%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5/" data-id="clcifpe4g0008tcjf65zr2txw" data-title="Obsidian多端同步" class="article-share-link">分享</a>
       
       
       

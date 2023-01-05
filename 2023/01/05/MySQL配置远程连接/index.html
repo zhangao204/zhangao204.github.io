@@ -6,15 +6,15 @@
   
   <title>MySQL配置远程连接 | 影歌Shadowsong</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="123456789101112# 建议创建一个新用户来用于远程连接，避免直接使用root# &amp;#x27;%&amp;#x27;表示允许来自所有位置的连接create user &amp;#x27;username&amp;#x27;@&amp;#x27;%&amp;#x27; identified by &amp;#x27;password.&amp;#x27;;# 设置该用户可操作的数据库或特定的表# &amp;#x27;*&amp;#x27;表示授权所有库或表#">
+  <meta name="description" content="mysql配置远程连接并设置具体操作权限 123456789101112# 建议创建一个新用户来用于远程连接，避免直接使用root# &amp;#x27;%&amp;#x27;表示允许来自所有位置的连接create user &amp;#x27;username&amp;#x27;@&amp;#x27;%&amp;#x27; identified by &amp;#x27;password.&amp;#x27;;# 设置该用户可操作的数据库或特定的表# &amp;#x">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySQL配置远程连接">
 <meta property="og:url" content="https://zhangao204.github.io/2023/01/05/MySQL%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/index.html">
 <meta property="og:site_name" content="影歌Shadowsong">
-<meta property="og:description" content="123456789101112# 建议创建一个新用户来用于远程连接，避免直接使用root# &amp;#x27;%&amp;#x27;表示允许来自所有位置的连接create user &amp;#x27;username&amp;#x27;@&amp;#x27;%&amp;#x27; identified by &amp;#x27;password.&amp;#x27;;# 设置该用户可操作的数据库或特定的表# &amp;#x27;*&amp;#x27;表示授权所有库或表#">
+<meta property="og:description" content="mysql配置远程连接并设置具体操作权限 123456789101112# 建议创建一个新用户来用于远程连接，避免直接使用root# &amp;#x27;%&amp;#x27;表示允许来自所有位置的连接create user &amp;#x27;username&amp;#x27;@&amp;#x27;%&amp;#x27; identified by &amp;#x27;password.&amp;#x27;;# 设置该用户可操作的数据库或特定的表# &amp;#x">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-01-05T01:24:20.000Z">
-<meta property="article:modified_time" content="2023-01-05T01:47:58.856Z">
+<meta property="article:modified_time" content="2023-01-05T01:53:01.850Z">
 <meta property="article:author" content="影歌Shadowsong">
 <meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary">
@@ -98,13 +98,14 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">建议创建一个新用户来用于远程连接，避免直接使用root</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">&#x27;%&#x27;</span>表示允许来自所有位置的连接</span></span><br><span class="line">create user &#x27;username&#x27;@&#x27;%&#x27; identified by &#x27;password.&#x27;;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置该用户可操作的数据库或特定的表</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">&#x27;*&#x27;</span>表示授权所有库或表</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">其中权限除了 ALL 外也可以独立设置</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">             |- SELECT</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">             |- UPDATE</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">             |- INSERT</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">             |- DELETE</span></span><br><span class="line">GRANT ALL ON *.* TO &#x27;username&#x27;@&#x27;%&#x27;;</span><br></pre></td></tr></table></figure>
+        <p>mysql配置远程连接并设置具体操作权限</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">建议创建一个新用户来用于远程连接，避免直接使用root</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">&#x27;%&#x27;</span>表示允许来自所有位置的连接</span></span><br><span class="line">create user &#x27;username&#x27;@&#x27;%&#x27; identified by &#x27;password.&#x27;;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置该用户可操作的数据库或特定的表</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">&#x27;*&#x27;</span>表示授权所有库或表</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">其中权限除了 ALL 外也可以独立设置</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">             |- SELECT</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">             |- UPDATE</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">             |- INSERT</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">             |- DELETE</span></span><br><span class="line">GRANT ALL ON *.* TO &#x27;username&#x27;@&#x27;%&#x27;;</span><br></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhangao204.github.io/2023/01/05/MySQL%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" data-id="clcifj49z0003zcjf6mla4sqc" data-title="MySQL配置远程连接" class="article-share-link">分享</a>
+      <a data-url="https://zhangao204.github.io/2023/01/05/MySQL%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" data-id="clcifpe4e0004tcjf5dvp4gy2" data-title="MySQL配置远程连接" class="article-share-link">分享</a>
       
       
       
