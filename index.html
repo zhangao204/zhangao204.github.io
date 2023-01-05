@@ -73,6 +73,48 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-MySQL配置远程连接" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/01/05/MySQL%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" class="article-date">
+  <time class="dt-published" datetime="2023-01-05T01:24:20.000Z" itemprop="datePublished">2023-01-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2023/01/05/MySQL%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">MySQL配置远程连接</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">建议创建一个新用户来用于远程连接，避免直接使用root</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">&#x27;%&#x27;</span>表示允许来自所有位置的连接</span></span><br><span class="line">create user &#x27;username&#x27;@&#x27;%&#x27; identified by &#x27;password.&#x27;;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">设置该用户可操作的数据库或特定的表</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">&#x27;*&#x27;</span>表示授权所有库或表</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">其中权限除了 ALL 外也可以独立设置</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">             |- SELECT</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">             |- UPDATE</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">             |- INSERT</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">             |- DELETE</span></span><br><span class="line">GRANT ALL ON *.* TO &#x27;username&#x27;@&#x27;%&#x27;;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zhangao204.github.io/2023/01/05/MySQL%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/" data-id="clcifj49z0003zcjf6mla4sqc" data-title="MySQL配置远程连接" class="article-share-link">分享</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MySQL/" rel="tag">MySQL</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-MySQL安装与配置-Ubuntu20-04" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/10/10/MySQL%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-Ubuntu20-04/" class="article-date">
@@ -96,6 +138,7 @@
     <div class="e-content article-entry" itemprop="articleBody">
       
         <h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><p>本文使用MySQL官方提供的apt配置文件进行安装</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">安装与配置</span></span><br><span class="line">sudo dpkg -i /PATH/version-specific-package-name.deb</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt-get install mysql-server</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">查看MySQL状态</span></span><br><span class="line">sudo service mysql status</span><br></pre></td></tr></table></figure>
         
           <p class="article-more-link">
             <a href="/2022/10/10/MySQL%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-Ubuntu20-04/#more">继续阅读</a>
@@ -104,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhangao204.github.io/2022/10/10/MySQL%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-Ubuntu20-04/" data-id="clcbsagxz0000f4jfcgdo8tyr" data-title="MySQL，Node.js安装与配置(Ubuntu20.04)" class="article-share-link">分享</a>
+      <a data-url="https://zhangao204.github.io/2022/10/10/MySQL%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-Ubuntu20-04/" data-id="clcifj4a00004zcjf2u4l300f" data-title="MySQL，Node.js安装与配置(Ubuntu20.04)" class="article-share-link">分享</a>
       
       
       
@@ -137,7 +180,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhangao204.github.io/2022/10/09/%E5%B0%8F%E9%95%87%E5%BE%80%E4%BA%8B/" data-id="clcbsagym0007f4jf9xwabhr0" data-title="" class="article-share-link">分享</a>
+      <a data-url="https://zhangao204.github.io/2022/10/09/%E5%B0%8F%E9%95%87%E5%BE%80%E4%BA%8B/" data-id="clcifj4a30009zcjf4cos7fa3" data-title="" class="article-share-link">分享</a>
       
       
       
@@ -240,7 +283,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhangao204.github.io/2022/10/05/HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E9%80%9F%E6%9F%A5/" data-id="clcbsagyb0001f4jffb0bhtol" data-title="HTTP状态码速查" class="article-share-link">分享</a>
+      <a data-url="https://zhangao204.github.io/2022/10/05/HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E9%80%9F%E6%9F%A5/" data-id="clcifj49v0001zcjf5i7ied02" data-title="HTTP状态码速查" class="article-share-link">分享</a>
       
       
       
@@ -281,7 +324,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhangao204.github.io/2022/09/25/Node-js%E5%8A%A8%E6%80%81SQL/" data-id="clcbsagyj0004f4jfeyrybbje" data-title="Node.js动态SQL" class="article-share-link">分享</a>
+      <a data-url="https://zhangao204.github.io/2022/09/25/Node-js%E5%8A%A8%E6%80%81SQL/" data-id="clcifj4a10005zcjfafroel5w" data-title="Node.js动态SQL" class="article-share-link">分享</a>
       
       
       
@@ -347,7 +390,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhangao204.github.io/2022/09/01/Git%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" data-id="clcbsagyl0005f4jfgwke4u6o" data-title="Git常用指令" class="article-share-link">分享</a>
+      <a data-url="https://zhangao204.github.io/2022/09/01/Git%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/" data-id="clcifj49r0000zcjfev5z9orr" data-title="Git常用指令" class="article-share-link">分享</a>
       
       
       
@@ -393,7 +436,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zhangao204.github.io/2022/08/28/Obsidian%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5/" data-id="clcbsagyi0003f4jf4e9ihj6j" data-title="Obsidian多端同步" class="article-share-link">分享</a>
+      <a data-url="https://zhangao204.github.io/2022/08/28/Obsidian%E5%A4%9A%E7%AB%AF%E5%90%8C%E6%AD%A5/" data-id="clcifj4a20008zcjf7cs5e9ha" data-title="Obsidian多端同步" class="article-share-link">分享</a>
       
       
       
@@ -439,7 +482,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">归档</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">八月 2022</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/01/">一月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/10/">十月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/08/">八月 2022</a></li></ul>
     </div>
   </div>
 
@@ -450,6 +493,10 @@
     <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2023/01/05/MySQL%E9%85%8D%E7%BD%AE%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">MySQL配置远程连接</a>
+          </li>
         
           <li>
             <a href="/2022/10/10/MySQL%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-Ubuntu20-04/">MySQL，Node.js安装与配置(Ubuntu20.04)</a>
@@ -465,10 +512,6 @@
         
           <li>
             <a href="/2022/09/25/Node-js%E5%8A%A8%E6%80%81SQL/">Node.js动态SQL</a>
-          </li>
-        
-          <li>
-            <a href="/2022/09/01/Git%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/">Git常用指令</a>
           </li>
         
       </ul>
@@ -512,7 +555,7 @@
     <!-- more END -->
     <div id="footer-info" class="inner">
       
-      &copy; 2022 影歌Shadowsong<br>
+      &copy; 2023 影歌Shadowsong<br>
       Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
